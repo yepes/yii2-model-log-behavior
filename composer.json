@@ -3,6 +3,7 @@
     "description": "Test description",
     "type": "yii2-extension",
     "license": "MIT",
+    "stability": "stable",
     "authors": [
         {
             "name": "Jesus Yepes",
