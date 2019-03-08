@@ -1,0 +1,21 @@
+{
+    "name": "yepes/yii2-model-log-behavior",
+    "description": "Test description",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jesus Yepes",
+            "email": "jesus@goltratec.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": ">=2.0.5",
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "goltratec\\log\\": "src"
+        }
+    },
+}
