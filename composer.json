@@ -3,6 +3,12 @@
     "description": "Test description",
     "type": "yii2-extension",
     "license": "MIT",
+    "keywords": [
+        "yii2",
+        "extension",
+        "log",
+        "behavior"
+    ],
     "stability": "stable",
     "authors": [
         {
