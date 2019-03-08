@@ -23,7 +23,7 @@ class Log extends ActiveRecord
      */
     public static function tableName()
     {
-        return 'log';
+        return 'goltratec_log';
     }
 
     /**
