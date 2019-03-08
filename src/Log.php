@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace goltratec\log;
 
 use Yii;
 use yii\helpers\Json;

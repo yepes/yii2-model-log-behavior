@@ -9,6 +9,7 @@
         "log",
         "behavior"
     ],
+    "stability": "stable",
     "authors": [
         {
             "name": "Jesus Yepes",
