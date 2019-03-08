@@ -20,5 +20,8 @@
         "psr-4": {
             "goltratec\\log\\": "src"
         }
+    },
+    "require": {
+        "yiisoft/yii2": "*"
     }
 }

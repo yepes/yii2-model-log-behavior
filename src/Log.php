@@ -4,6 +4,7 @@ namespace goltratec\log;
 
 use Yii;
 use yii\helpers\Json;
+use \yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "log".
@@ -15,7 +16,7 @@ use yii\helpers\Json;
  * @property string $event
  * @property string $object
  */
-class Log extends \yii\db\ActiveRecord
+class Log extends ActiveRecord
 {
     /**
      * @inheritdoc
