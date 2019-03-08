@@ -1,0 +1,1 @@
+./yii migrate/up --migrationPath=@vendor/yepes/yii2-model-log-behavior/migrations
