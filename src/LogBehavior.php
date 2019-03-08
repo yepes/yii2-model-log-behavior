@@ -4,6 +4,7 @@ namespace goltratec\log;
 
 use Yii;
 use yii\base\Behavior;
+use \yii\db\ActiveRecord;
 
 class LogBehavior extends Behavior {
 
