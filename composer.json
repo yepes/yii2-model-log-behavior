@@ -1,15 +1,15 @@
 {
     "name": "yepes/yii2-model-log-behavior",
-    "description": "Test description",
+    "description": "A simple log behavior for your Yii2 models.",
     "type": "yii2-extension",
     "license": "MIT",
     "keywords": [
         "yii2",
         "extension",
         "log",
-        "behavior"
+        "behavior",
+        "model"
     ],
-    "stability": "stable",
     "authors": [
         {
             "name": "Jesus Yepes",
