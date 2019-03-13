@@ -1,4 +1,4 @@
-#Log Behavior
+# Log Behavior
 
 Simple extension to log every change made to any model. 
 
