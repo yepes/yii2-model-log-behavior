@@ -18,7 +18,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "yepes\\log\\": "src"
+            "goltratec\\log\\": "src"
         }
     },
     "require": {
