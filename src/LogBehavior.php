@@ -12,7 +12,6 @@ class LogBehavior extends Behavior {
 	{
 		return [
 			ActiveRecord::EVENT_BEFORE_INSERT => 'handleLog',
-			ActiveRecord::EVENT_AFTER_INSERT => 'handleLog',
 			ActiveRecord::EVENT_BEFORE_UPDATE => 'handleLog',
 			ActiveRecord::EVENT_BEFORE_DELETE => 'handleLog',
 		];
