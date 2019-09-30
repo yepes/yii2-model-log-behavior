@@ -24,7 +24,7 @@ class LogBehavior extends Behavior {
 			Log::l(
 				$model->oldAttributes,
 				$model->attributes,
-				$event->name,
+				$event,
 				$model::className(),
 				Yii::$app->user->id ?? null
 			);

@@ -54,11 +54,19 @@ class Log extends ActiveRecord
         ];
     }
 
-    static function l(array $oldAttributes, array $newAttributes, string $event, $object, $uid = false) {
+    static function l(array $oldAttributes, array $newAttributes, $event, $object, $uid = false) {
 		$model = new self;
+        $sender = $event->sender;
+		if (isset($sender->logIgnoredAttributes) && is_array($sender->logIgnoredAttributes) && count($sender->logIgnoredAttributes) > 0) {
+            foreach ($sender->logIgnoredAttributes as $attr) {
+                unset($oldAttributes[$attr]);
+                unset($newAttributes[$attr]);
+            }
+
+        }
 		$model->old_attributes = Json::encode($oldAttributes);
 		$model->new_attributes = Json::encode($newAttributes);
-		$model->event = $event;
+		$model->event = $event->name;
 		$model->object = $object;
 		$model->user = $uid;
         $model->date = new \yii\db\Expression('NOW()');

@@ -24,6 +24,17 @@ public function behaviors()
 }
 ```
 
+### Ignoring attributes
+
+In the model, just define an attribute **$logIgnoredAttributes** which is an array of string, representings the properties you wish to ignore.
+
+```
+public $logIgnoredAttributes = ['attribute1', 'attribute2'];
+```
+
+If $logIgnoredAttributes is not defined, every attribute will be logged.
+
+
 ## TODO
 
 Right now, logs are just saved in the database, in a table named goltratec_log
