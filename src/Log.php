@@ -15,6 +15,7 @@ use \yii\db\ActiveRecord;
  * @property integer $user
  * @property string $event
  * @property string $object
+ * @property integer $object_id
  */
 class Log extends ActiveRecord
 {
@@ -33,7 +34,7 @@ class Log extends ActiveRecord
     {
         return [
             [['old_attributes', 'new_attributes'], 'string'],
-            [['user'], 'integer'],
+            [['user', 'object_id'], 'integer'],
             [['date'], 'safe'],
             [['event', 'object'], 'string', 'max' => 30],
         ];
@@ -54,7 +55,7 @@ class Log extends ActiveRecord
         ];
     }
 
-    static function l(array $oldAttributes, array $newAttributes, $event, $object, $uid = false) {
+    static function l(array $oldAttributes, array $newAttributes, $event, $object, $uid = false, $object_id = null) {
 		$model = new self;
         $sender = $event->sender;
 		if (isset($sender->logIgnoredAttributes) && is_array($sender->logIgnoredAttributes) && count($sender->logIgnoredAttributes) > 0) {
@@ -62,14 +63,16 @@ class Log extends ActiveRecord
                 unset($oldAttributes[$attr]);
                 unset($newAttributes[$attr]);
             }
-
         }
+
 		$model->old_attributes = Json::encode($oldAttributes);
 		$model->new_attributes = Json::encode($newAttributes);
 		$model->event = $event->name;
 		$model->object = $object;
 		$model->user = $uid;
         $model->date = new \yii\db\Expression('NOW()');
+        $model->object_id = $object_id;
+        
 		$model->save();
 	}
 }

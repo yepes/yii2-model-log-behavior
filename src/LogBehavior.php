@@ -25,7 +25,23 @@ class LogBehavior extends Behavior {
             $model->attributes,
             $event,
             $model::className(),
-            Yii::$app->user->id ?? null
+            Yii::$app->user->id ?? null,
+            $this->getPK($model)
         );
+    }
+
+    /**
+     * Returns the PK of a given model given that it's formed by only one field.
+     * Rows with multiple fields as PKs are not currently supported
+     * @param $model
+     * @return false|mixed
+     */
+    private function getPK($model) {
+        $pks = $model::getTableSchema()->primaryKey;
+
+        if (count($pks) === 1)
+            return $model->{$pks[0]};
+
+        return null;
     }
 }
