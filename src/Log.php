@@ -70,8 +70,8 @@ class Log extends ActiveRecord
 		$model->event = $event->name;
 		$model->object = $object;
 		$model->user = $uid;
-        $model->date = gmdate('Y-m-d h:i:s');
-        $model->object_id = $object_id;
+		$model->date = gmdate('Y-m-d H:i:s');
+		$model->object_id = $object_id;
         
 		$model->save();
 	}
