@@ -20,6 +20,9 @@ class LogBehavior extends Behavior {
         /** @var  $model ActiveRecord*/
         $model = $event->sender;
 
+        if (isset($this->ignoreLogBehavior) && $this->ignoreLogBehavior)
+            return;
+
         Log::l(
             $model->oldAttributes,
             $model->attributes,
