@@ -22,9 +22,9 @@ class LogBehavior extends Behavior {
 
         if (isset($this->ignoreLogBehavior) && $this->ignoreLogBehavior)
             return;
-
+        $oldAttributes = array_merge($model->oldAttributes, $event->changedAttributes);
         Log::l(
-            $model->oldAttributes,
+            $oldAttributes,
             $model->attributes,
             $event,
             $model::className(),
