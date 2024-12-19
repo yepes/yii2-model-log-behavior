@@ -36,7 +36,8 @@ class Log extends ActiveRecord
             [['old_attributes', 'new_attributes'], 'string'],
             [['user', 'object_id'], 'integer'],
             [['date'], 'safe'],
-            [['event', 'object'], 'string', 'max' => 30],
+            [['event'], 'string', 'max' => 30],
+	    [['object'], 'string', 'max' => 65],
         ];
     }
 
