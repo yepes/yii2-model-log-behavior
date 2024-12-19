@@ -19,7 +19,7 @@ class m190308_164252_initial_schema extends Migration
             'new_attributes' => Schema::TYPE_TEXT,
             'user' => Schema::TYPE_INTEGER,
             'event' => $this->string(30),
-            'object' => $this->string(30),
+            'object' => $this->string(65),
             'date' => Schema::TYPE_DATETIME,
         ]);
     }
